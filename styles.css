@@ -7,7 +7,7 @@
     
 /***** General Styles *****/
 body {
-  background-color: #424b54;
+  background-color: var(--bcolor);
   background-size: 20px 20px;
   background-image: radial-gradient(circle, var(--scolor) 1px, rgba(0, 0, 0, 0) 1px);
 }
@@ -20,14 +20,14 @@ p {
 /***** Borders *****/
 
 .card {
-  background-color: #424b54;
+  background-color: var(--bcolor);
   border-radius: 0px;
   border: 2px solid var(--scolor);
   color: var(--scolor);
 }
 
 /***** Headings *****/
-h1 {
+h1,h2,h3 {
   color: var(--scolor);
   font-family: 'Share Tech Mono', monospace;
 }
