@@ -1,0 +1,33 @@
+/***** Basic Colors *****/
+
+:root {
+  --bcolor: #424b54;
+  --scolor: #d9cbab;
+}
+    
+/***** General Styles *****/
+body {
+  background-color: var(--bcolor);
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, var(--scolor) 1px, rgba(0, 0, 0, 0) 1px);
+}
+
+p {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--scolor);
+}
+
+/***** Borders *****/
+
+.card {
+  background-color: var(--bcolor);
+  border-radius: 0px;
+  border: 2px solid var(--scolor);
+  color: var(--scolor);
+}
+
+/***** Headings *****/
+h1 {
+  color: var(--scolor);
+  font-family: 'Share Tech Mono', monospace;
+}
