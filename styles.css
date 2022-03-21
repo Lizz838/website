@@ -1,13 +1,13 @@
 /***** Basic Colors *****/
 
 :root {
-  --pcolor: #424b54;
+  --primcolor: #424b54;
   --scolor: #d9cbab;
 }
     
 /***** General Styles *****/
 body {
-  background-color: var(--pcolor);
+  background-color: #424b54;
   background-size: 20px 20px;
   background-image: radial-gradient(circle, var(--scolor) 1px, rgba(0, 0, 0, 0) 1px);
 }
@@ -20,7 +20,7 @@ p {
 /***** Borders *****/
 
 .card {
-  background-color: var(--pcolor);
+  background-color: #424b54;
   border-radius: 0px;
   border: 2px solid var(--scolor);
   color: var(--scolor);
