@@ -1,34 +1,80 @@
-/***** Basic Colors *****/
-
 :root {
-  --bcolor: #424b54;
-  --scolor: #d9cbab;
+  --main: #3e4452;
+  --detail: #dbc8a0;
+  --bright: #c1cbe3;
 }
-    
-/***** General Styles *****/
+
+/*** The Body ***/
 body {
-  background-color: var(--bcolor);
-  background-size: 20px 20px;
-  background-image: radial-gradient(circle, var(--scolor) 1px, rgba(0, 0, 0, 0) 1px);
+background-color: var(--main);
+background-size: 20px 20px;
+  background-image: radial-gradient(circle, var(--detail) 1px, rgba(0, 0, 0, 0) 1px);
+  margin: 0px;
+font-family: 'JetBrains Mono', monospace;
+  color: var(--detail)
 }
 
-p {
-  font-family: 'Share Tech Mono', monospace;
-  color: var(--scolor);
-  text-align: justify
+/*** Sink styling ***/
+
+a {
+  color: var(--bright);
 }
 
-/***** Borders *****/
-
-.card {
-  background-color: var(--bcolor);
-  border-radius: 0px;
-  border: 2px solid var(--scolor);
-  color: var(--scolor);
+a:hover {
+  color: #fff;
 }
 
-/***** Headings *****/
-h1,h2,h3 {
-  color: var(--scolor);
-  font-family: 'Share Tech Mono', monospace;
+/*** Header ***/
+
+.heading {
+  font-size: 30px;
+  text-align: center;
+  text-transform:uppercase;
+}
+
+.subtitle {
+  font-size: 16px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/*** Card ***/
+.card-h {
+  margin: 3em auto;
+  background-color: var(--main);
+  padding: 2em;
+  width: 25%;
+  border: 1px solid var(--detail);
+}
+
+/*** Grid ***/
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: sub; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'sub sub main main main main'
+    'footer footer footer footer footer footer';
+  gap: 10px;
+  padding: 10px;
+  max-width: 1000px;
+  margin: auto auto 3em auto;
+}
+
+.grid-container > div {
+  background-color: var(--main);
+  padding: 20px;
+  font-size: 14px;
+  border: 1px solid var(--detail);
+  text-align: justify;
+}
+
+.grid-container .item5 {
+  text-align: center
 }
