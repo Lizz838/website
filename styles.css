@@ -1,80 +1,201 @@
+/****** Basics ******/
+
+html, body {
+  width: 100%;
+  height:100%;
+  margin:0;
+}
+
 :root {
-  --main: #3e4452;
-  --detail: #dbc8a0;
-  --bright: #c1cbe3;
+  --dark: #1f2937;
+  --xdark: #111827;
+  --decor: #ddd;
+  --accent: #5f9e97;
+  --accent-bright: #96d9d1;
+  --accent-dark: #35706a;
 }
 
-/*** The Body ***/
 body {
-background-color: var(--main);
-background-size: 20px 20px;
-  background-image: radial-gradient(circle, var(--detail) 1px, rgba(0, 0, 0, 0) 1px);
-  margin: 0px;
-font-family: 'JetBrains Mono', monospace;
-  color: var(--detail)
+  background: var(--dark);
+  font-family: 'Ubuntu', sans-serif;
 }
 
-/*** Sink styling ***/
+/****** Hero ******/
 
-a {
-  color: var(--bright);
+.hero-container {
+  background: var(--dark) url('../../images/blurry-gradient-haikei.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-a:hover {
-  color: #fff;
-}
-
-/*** Header ***/
-
-.heading {
-  font-size: 30px;
+.inner-container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
   text-align: center;
-  text-transform:uppercase;
+  color: var(--decor);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/****** Hero Text ******/
+
+.btitle {
+  font-family: 'Yeseva One', cursive;
+  font-size: 3em;
+  text-spacing: 0.2em;
 }
 
 .subtitle {
-  font-size: 16px;
-  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.3em;
+}
+
+.herobtn {
+  background: var(--accent);
+  color: var(--decor);
+  transition: background-color 0.2s ease-in;
+  padding: 0.6em;
+  margin: 1em;
+  border: 2px solid var(--decor);
+  border-radius: 16px;
+  font-size: 1em;
+  font-family: 'Ubuntu', sans-serif;
   text-transform: lowercase;
 }
 
-/*** Card ***/
-.card-h {
-  margin: 3em auto;
-  background-color: var(--main);
-  padding: 2em;
-  width: 25%;
-  border: 1px solid var(--detail);
+.herobtn:hover {
+  background: var(--accent-dark);
+  color: var(--decor);
+  transition: background-color 0.2s ease-out;
 }
 
-/*** Grid ***/
 
-.item1 { grid-area: header; }
-.item2 { grid-area: menu; }
-.item3 { grid-area: main; }
-.item4 { grid-area: sub; }
-.item5 { grid-area: footer; }
+/****** Navbar ******/
 
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'sub sub main main main main'
-    'footer footer footer footer footer footer';
-  gap: 10px;
-  padding: 10px;
-  max-width: 1000px;
-  margin: auto auto 3em auto;
+.navbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: var(--dark);
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.grid-container > div {
-  background-color: var(--main);
-  padding: 20px;
-  font-size: 14px;
-  border: 1px solid var(--detail);
-  text-align: justify;
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.grid-container .item5 {
-  text-align: center
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: var(--accent);
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+  background-color: var(--dark);
+  transition: color 0.2s ease-in;
+}
+
+.navbar li a:hover {
+  color: var(--decor);
+  transition: color 0.2s ease-out;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: var(--accent);
+  padding: 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--decor);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: var(--dark);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  color: var(--accent);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/****** Main Body ******/
+
+.main-container {
+  background: var(--decor);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.flex-container {
+  margin: 4em;
+  max-width: 850px;
+  color: var(--dark);
+}
+
+/****** Footer ******/
+
+.footer {
+  display: flex;
+  background: var(--dark);
+  color: var(--decor);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 16px 0px;
+}
+
+/****** Headings (h1, h2, h3) ******/
+
+h1, h2, h3 {
+  font-family:
 }
