@@ -1004,8 +1004,8 @@ Setting.addToggle("fullscreen", {
 
 /* autosave */
 
-config.saves.autosave = true;
-config.saves.isAllowed = function () {
+Config.saves.autosave = true;
+Config.saves.isAllowed = function () {
 	if (tags().includes('noreturn')) {
 		return false;
 	}
